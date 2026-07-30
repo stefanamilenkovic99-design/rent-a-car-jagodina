@@ -4,548 +4,695 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asterix Rent a Car - Iznajmljivanje vozila u Jagodini</title>
+<meta name="description" content="Iznajmljivanje automobila u Jagodini i okolini za poslovne i privatne putnike. Asterix Rent a Car - brzo, jasno, lokalno.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #222222;
-    background: #ffffff;
-    line-height: 1.6;
-    font-size: 16px;
-    overflow-x: hidden;
-  }
-  h1, h2, h3 {
-    font-family: 'Archivo', Arial, sans-serif;
-    color: #111111;
-    line-height: 1.15;
-  }
-  img { max-width: 100%; display: block; }
-  a { color: inherit; }
-
-  .wrap {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
+  :root{
+    --primary:#111111;
+    --accent:#E8590C;
+    --accent-dark:#C24A0A;
+    --bg:#FAFAFA;
+    --bg-alt:#F1F1EF;
+    --line:#E3E3E0;
+    --gray:#5B5B5B;
   }
 
-  p { max-width: 65ch; }
+  *{box-sizing:border-box;margin:0;padding:0;}
 
-  .section {
-    padding-top: 96px;
-    padding-bottom: 96px;
-    border-bottom: 1px solid #eaeaea;
-  }
-  .section.no-border { border-bottom: none; }
-  .section-offwhite { background: #F7F7F5; }
+  html{scroll-behavior:smooth;}
 
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #666666;
-    margin-bottom: 12px;
-  }
-  h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 24px;
-  }
-  .section p + p { margin-top: 16px; }
-
-  .btn {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 16px;
-    border: 2px solid #111111;
-    cursor: pointer;
-  }
-  .btn-primary {
-    background: #111111;
-    color: #ffffff;
-  }
-  .btn-primary:hover { background: #2a2a2a; border-color: #2a2a2a; }
-  .btn-secondary {
-    background: transparent;
-    color: #111111;
-  }
-  .btn-secondary:hover { background: #111111; color: #fff; }
-
-  /* NAVBAR */
-  .navbar {
-    position: sticky;
-    top: 0;
-    background: #ffffff;
-    border-bottom: 1px solid #eaeaea;
-    z-index: 200;
-  }
-  .navbar .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    position: relative;
-  }
-  .logo img { height: 44px; width: auto; }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-  .nav-links a.navlink {
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 15px;
-    color: #111111;
-  }
-  .menu-toggle { display: none; }
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    width: 30px;
-  }
-  .hamburger span {
-    width: 100%;
-    height: 2px;
-    background: #111111;
-    display: block;
+  body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--primary);
+    background:var(--bg);
+    line-height:1.6;
+    font-size:16px;
+    overflow-x:hidden;
   }
 
-  @media (max-width: 991px) {
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 80px;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-      padding-top: 24px;
-      padding-bottom: 24px;
-      padding-left: 24px;
-      padding-right: 24px;
-      border-bottom: 1px solid #eaeaea;
+  h1,h2,h3{
+    font-family:'Archivo', Arial, sans-serif;
+    color:var(--primary);
+    line-height:1.15;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+  p{max-width:65ch;}
+
+  /* ---------- NAVBAR ---------- */
+  header.site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+
+  .navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+
+  .logo img{height:44px;width:auto;}
+
+  nav.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+  }
+
+  nav.nav-links a{
+    font-size:15px;
+    font-weight:700;
+    color:var(--primary);
+  }
+
+  nav.nav-links a:hover{color:var(--accent);}
+
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    padding:14px 26px;
+    border-radius:8px;
+    border:1px solid var(--accent);
+    cursor:pointer;
+    text-align:center;
+  }
+
+  .btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  .btn-outline{
+    background:transparent;
+    color:var(--primary);
+    border:1px solid var(--primary);
+  }
+
+  .btn-outline:hover{background:var(--primary);color:#fff;}
+
+  .nav-toggle{display:none;}
+
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    width:28px;
+  }
+
+  .hamburger span{
+    display:block;
+    height:2px;
+    width:100%;
+    background:var(--primary);
+  }
+
+  /* ---------- HERO ---------- */
+  section.hero{
+    padding-top:88px;
+    padding-bottom:88px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+
+  h1.hero-title{
+    font-size:clamp(40px,4.6vw,56px);
+    font-weight:800;
+    letter-spacing:-0.5px;
+    margin-bottom:22px;
+  }
+
+  .hero-sub{
+    font-size:18px;
+    color:var(--gray);
+    margin-bottom:32px;
+    max-width:52ch;
+  }
+
+  .placeholder-img{
+    background:#E4E4E1;
+    border:1px solid var(--line);
+    color:#6B6B6B;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    min-height:280px;
+    border-radius:8px;
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  /* ---------- BAND (image strip) ---------- */
+  .band{
+    background-color:#111111;
+    background-image:url('assets/aster-home-page_22.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    padding-top:34px;
+    padding-bottom:34px;
+  }
+
+  .band p{
+    color:#fff;
+    text-align:center;
+    max-width:100%;
+    font-size:16px;
+    font-weight:700;
+    margin:0 auto;
+  }
+
+  .band-alt{
+    background-image:url('assets/aster-home-page_24.png');
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding-top:96px;
+    padding-bottom:96px;
+    border-bottom:1px solid var(--line);
+  }
+
+  section:last-of-type{border-bottom:none;}
+
+  .eyebrow{
+    color:var(--accent);
+    font-weight:700;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:14px;
+  }
+
+  h2{
+    font-size:clamp(28px,3.4vw,38px);
+    font-weight:800;
+    margin-bottom:26px;
+    max-width:20ch;
+  }
+
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+
+  .text-col p{
+    margin-bottom:16px;
+    color:var(--gray);
+    font-size:17px;
+  }
+
+  .text-col p:last-child{margin-bottom:0;}
+
+  /* ---------- CREDIBILITY ---------- */
+  .cred-list{
+    margin-top:28px;
+    border-top:1px solid var(--line);
+  }
+
+  .cred-item{
+    padding-top:18px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+
+  .cred-item svg{flex-shrink:0;margin-top:4px;}
+
+  .cred-item p{color:var(--gray);font-size:16px;max-width:60ch;}
+
+  /* ---------- BENEFITS ---------- */
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+
+  .benefit-card{
+    background:#fff;
+    padding:32px 28px;
+  }
+
+  .benefit-card svg{margin-bottom:16px;}
+
+  .benefit-card p{
+    color:var(--primary);
+    font-size:16px;
+    font-weight:700;
+    max-width:none;
+  }
+
+  /* ---------- OFFER ---------- */
+  .offer-box{
+    border:1px solid var(--line);
+    padding:40px;
+    border-radius:8px;
+    background:#fff;
+  }
+
+  .offer-steps{
+    list-style:none;
+    counter-reset:step;
+    margin-top:24px;
+    margin-bottom:32px;
+  }
+
+  .offer-steps li{
+    counter-increment:step;
+    display:flex;
+    gap:16px;
+    padding-top:16px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+    color:var(--gray);
+    font-size:16px;
+  }
+
+  .offer-steps li:last-child{border-bottom:none;}
+
+  .offer-steps li::before{
+    content:counter(step);
+    flex-shrink:0;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* ---------- WARNING ---------- */
+  .warning-box{
+    max-width:760px;
+  }
+
+  .warning-box p{color:var(--gray);font-size:17px;margin-bottom:16px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+  }
+
+  .contact-info-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding-top:16px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .contact-info-item img{width:32px;height:32px;object-fit:contain;}
+
+  .contact-info-item span{font-size:16px;color:var(--gray);}
+
+  form.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:#fff;
+    color:var(--primary);
+    width:100%;
+  }
+
+  .contact-form textarea{resize:vertical;min-height:110px;}
+
+  .contact-form input:focus,
+  .contact-form textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+  }
+
+  .contact-form button{
+    align-self:flex-start;
+    margin-top:6px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--primary);
+    color:#EDEDED;
+    padding-top:64px;
+    padding-bottom:40px;
+  }
+
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:48px;
+    padding-bottom:40px;
+    border-bottom:1px solid #333;
+  }
+
+  .footer-grid .logo-footer img{height:40px;filter:brightness(0) invert(1);margin-bottom:16px;}
+
+  .footer-grid p{color:#B8B8B8;font-size:15px;margin-bottom:10px;}
+
+  .footer-grid h3{
+    font-family:'Archivo', Arial, sans-serif;
+    font-size:16px;
+    margin-bottom:16px;
+    color:#fff;
+  }
+
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+
+  .footer-links a{color:#B8B8B8;font-size:15px;}
+
+  .footer-links a:hover{color:#fff;}
+
+  .footer-ps{
+    padding-top:32px;
+    font-size:14px;
+    color:#9A9A9A;
+    max-width:70ch;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:991px){
+    nav.nav-links{
+      position:fixed;
+      top:73px;
+      left:0;
+      right:0;
+      background:#fff;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.25s ease;
     }
-    .menu-toggle:checked ~ .nav-links { display: flex; }
-    .hamburger { display: flex; }
+
+    nav.nav-links a{
+      width:100%;
+      padding-top:16px;
+      padding-bottom:16px;
+      padding-left:24px;
+      padding-right:24px;
+      border-bottom:1px solid var(--line);
+    }
+
+    nav.nav-links .btn{
+      margin:16px 24px 20px 24px;
+      width:calc(100% - 48px);
+    }
+
+    .nav-toggle:checked ~ nav.nav-links{
+      max-height:500px;
+    }
+
+    .hamburger{display:flex;}
+
+    .hero-grid,
+    .two-col,
+    .contact-grid{
+      grid-template-columns:1fr;
+    }
+
+    .benefit-grid{grid-template-columns:1fr 1fr;}
+
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
   }
 
-  /* HERO */
-  .hero .wrap {
-    display: flex;
-    align-items: center;
-    gap: 48px;
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-  .hero-text { flex: 1; }
-  .hero-media { flex: 1; }
-  .hero h1 {
-    font-size: 52px;
-    font-weight: 800;
-    margin-bottom: 24px;
-  }
-  .hero p {
-    font-size: 18px;
-    color: #444444;
-    margin-bottom: 32px;
-    max-width: 50ch;
-  }
-  @media (max-width: 768px) {
-    .hero .wrap { flex-direction: column; padding-top: 56px; padding-bottom: 56px; }
-    .hero h1 { font-size: 36px; }
-    .hero p { font-size: 16px; }
-  }
+  @media (max-width:768px){
+    .wrap{padding-left:20px;padding-right:20px;}
 
-  .placeholder-block {
-    background: #E8E8E8;
-    border: 1px solid #d5d5d5;
-    color: #777777;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding-top: 40%;
-    padding-bottom: 40%;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 8px;
-  }
+    section{padding-top:64px;padding-bottom:64px;}
 
-  .strip img {
-    width: 100%;
-    height: 46px;
-    object-fit: cover;
-    display: block;
-  }
+    section.hero{padding-top:48px;padding-bottom:56px;}
 
-  /* PROBLEM / SOLUTION */
-  .section-content { max-width: 720px; }
+    .benefit-grid{grid-template-columns:1fr;}
 
-  /* CREDIBILITY */
-  .cred-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    margin-top: 32px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 24px;
-    max-width: 620px;
-  }
-  .cred-row img { width: 36px; height: 36px; flex-shrink: 0; }
-  .cred-row span { font-size: 14px; color: #555555; font-weight: 700; }
+    .offer-box{padding:24px;}
 
-  /* BENEFITS */
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-top: 8px;
-  }
-  .benefit-item {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 24px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .benefit-item svg { flex-shrink: 0; margin-top: 2px; }
-  .benefit-item p { font-size: 15px; color: #333333; max-width: none; }
-  @media (max-width: 768px) {
-    .benefits-grid { grid-template-columns: 1fr; }
-  }
-
-  /* OFFER */
-  .offer-box {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 32px;
-    margin-top: 24px;
-    max-width: 700px;
-    background: #F7F7F5;
-  }
-  .offer-box .btn { margin-top: 16px; }
-
-  /* WARNING */
-  .warning-box {
-    border-left: 3px solid #111111;
-    padding-left: 24px;
-    max-width: 640px;
-  }
-
-  /* CONTACT */
-  .contact-grid {
-    display: flex;
-    gap: 48px;
-    align-items: flex-start;
-  }
-  .contact-form-wrap { flex: 1.2; }
-  .contact-info-wrap { flex: 1; }
-  @media (max-width: 768px) {
-    .contact-grid { flex-direction: column; }
-  }
-  form { display: flex; flex-direction: column; gap: 16px; max-width: 480px; }
-  label {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #555555;
-    margin-bottom: 6px;
-    display: block;
-  }
-  input, textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: #111111;
-  }
-  textarea { resize: vertical; min-height: 100px; }
-  input:focus, textarea:focus { outline: 1px solid #111111; }
-  form .btn { align-self: flex-start; border: none; }
-
-  .contact-info-item {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 24px;
-  }
-  .contact-info-item img { width: 34px; height: 34px; flex-shrink: 0; }
-  .contact-info-item p { font-size: 15px; }
-  .contact-info-item strong { display: block; margin-bottom: 4px; font-size: 15px; }
-
-  /* FOOTER */
-  footer {
-    background: #111111;
-    color: #cccccc;
-    padding-top: 64px;
-    padding-bottom: 32px;
-  }
-  .footer-cols {
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
-    flex-wrap: wrap;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #333333;
-  }
-  .footer-col { flex: 1; min-width: 200px; }
-  .footer-col h4 {
-    color: #ffffff;
-    font-family: 'Archivo', Arial, sans-serif;
-    font-size: 15px;
-    margin-bottom: 16px;
-  }
-  .footer-col p, .footer-col a {
-    font-size: 14px;
-    color: #bbbbbb;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 8px;
-  }
-  .footer-logo img { height: 40px; margin-bottom: 16px; }
-  .ps-line {
-    font-size: 14px;
-    color: #dddddd;
-    padding-top: 32px;
-    max-width: 65ch;
-  }
-  .copyright {
-    font-size: 13px;
-    color: #777777;
-    padding-top: 24px;
+    h2{max-width:100%;}
   }
 </style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="wrap">
-      <a href="#" class="logo"><img src="assets/logo.png" alt="Asterix Rent a Car logo"></a>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="hamburger" aria-label="Otvori meni">
-        <span></span><span></span><span></span>
-      </label>
-      <nav class="nav-links" id="navLinks">
-        <a class="navlink" href="#">Početna</a>
-        <a class="navlink" href="#ponuda">Automobili i cene</a>
-        <a class="navlink" href="#kredibilitet">O nama</a>
-        <a class="navlink" href="#kontakt">Kontakt</a>
-        <a class="btn btn-primary" href="#kontakt">Pošalji upit</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="wrap navbar">
+    <a href="#" class="logo"><img src="assets/logo.png" alt="Asterix Rent a Car logo"></a>
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-text">
-        <h1>Treba ti auto za sutra, a nemaš vremena da zoveš pet firmi?</h1>
-        <p>Asterix Rent a Car iznajmljuje vozila u Jagodini i okolini, za posao ili za put. Javiš se, dogovoriš termin, pokupiš vozilo isti dan.</p>
-        <a href="#kontakt" class="btn btn-primary">Pošalji upit za vozilo</a>
-      </div>
-      <div class="hero-media">
-        <div class="placeholder-block">FOTOGRAFIJA VOZILA IZ VOZNOG PARKA</div>
-      </div>
-    </div>
-  </section>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Otvori meni">
+      <span></span><span></span><span></span>
+    </label>
 
-  <div class="strip">
-    <img src="assets/aster-home-page_22.png" alt="">
+    <nav class="nav-links">
+      <a href="#">Početna</a>
+      <a href="#kredibilitet">O nama</a>
+      <a href="#">Vozila i cene</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn">Rezerviši auto</a>
+    </nav>
   </div>
+</header>
 
-  <section class="section" id="problem">
-    <div class="wrap">
-      <div class="section-content">
-        <div class="eyebrow">Situacija koju znaš</div>
-        <h2>Auto ti je na servisu, gost sleće za dva sata</h2>
-        <p>Kolima se nešto pokvarilo tri dana pre puta. Ili ti dolazi poslovni partner iz Beograda i treba mu prevoz do hotela u Jagodini. Ili si odlučio da porodica ipak putuje kolima na more, a tvoj auto ima 200.000 pređenih kilometara i ne veruješ mu na auto-putu.</p>
-        <p>Počneš da zoveš. Prva firma nema slobodno vozilo za taj datum. Druga traži depozit koji ti nije jasan. Treća ti ne odgovara na telefon posle četiri popodne.</p>
-        <p>Za dva sata ti gost stoji na aerodromu, a ti i dalje nemaš rešenje.</p>
-      </div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="hero-title">Kako da rezervišeš pouzdan auto u Jagodini bez čekanja i sitnih slova u ugovoru</h1>
+      <p class="hero-sub">Asterix Rent a Car iznajmljuje vozila poslovnim i privatnim putnicima u Jagodini i okolini. Javiš se, dogovorimo termin, auto te čeka.</p>
+      <a href="#kontakt" class="btn">Rezerviši auto</a>
     </div>
-  </section>
-
-  <section class="section section-offwhite" id="resenje">
-    <div class="wrap">
-      <div class="section-content">
-        <div class="eyebrow">Izlaz iz toga</div>
-        <h2>Jedan poziv, jedno vozilo, gotovo</h2>
-        <p>Asterix Rent a Car u Jagodini radi tačno to. Iznajmljujemo vozila ljudima kojima treba auto brzo, na jedan dan ili na mesec dana.</p>
-        <p>Javiš nam se, kažeš šta ti treba i za kada, mi ti kažemo koje vozilo je slobodno. Bez čekanja na odgovor po ceo dan i bez nagađanja da li će auto biti tu kad ti zatreba.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="kredibilitet">
-    <div class="wrap">
-      <div class="section-content">
-        <div class="eyebrow">Ko stoji iza ovoga</div>
-        <h2>Firma koju možeš proveriti</h2>
-        <p>Asterix - Rent a Car d.o.o. je registrovana firma sa sedištem u Jagodini. Matični broj i PIB firme su dostupni na uvid, kao kod svake registrovane firme.</p>
-        <p>Ne iznajmljuješ vozilo od nepoznatog vlasnika preko oglasa. Dogovaraš se direktno sa firmom koja posluje u Jagodini i stoji iza svakog vozila koje izda.</p>
-      </div>
-      <div class="cred-row">
-        <img src="assets/info.png" alt="Ikonica informacije">
-        <span>Podaci o firmi - naziv, matični broj, PIB, adresa sedišta - dostupni su na zahtev.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-offwhite" id="benefiti">
-    <div class="wrap">
-      <div class="eyebrow">Šta dobijaš</div>
-      <h2>Šta konkretno dobijaš kad iznajmiš kod nas</h2>
-      <div class="benefits-grid">
-
-        <div class="benefit-item">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
-          <p>Vozilo u Jagodini, bez putovanja u drugi grad da ga preuzmeš.</p>
-        </div>
-
-        <div class="benefit-item">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
-          <p>Dogovor telefonom ili mejlom, bez obaveznog dolaska u kancelariju.</p>
-        </div>
-
-        <div class="benefit-item">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
-          <p>Vozilo spremno za tvoj termin, ne moraš da planiraš nedeljama unapred.</p>
-        </div>
-
-        <div class="benefit-item">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
-          <p>Jedna firma za kratak i za dug najam, ne tražiš novog dobavljača svaki put.</p>
-        </div>
-
-        <div class="benefit-item">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
-          <p>Gostu iz inostranstva unapred rešiš prevoz, umesto da mu objašnjavaš kuda da ide po dolasku.</p>
-        </div>
-
-        <div class="benefit-item">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
-          <p>Manje brige oko toga da li će auto izdržati put - voziš vozilo koje neko drugi redovno održava.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="ponuda">
-    <div class="wrap">
-      <div class="section-content">
-        <div class="eyebrow">Kako to izgleda</div>
-        <h2>Šta dobijaš kad se javiš</h2>
-        <p>Javiš nam se preko forme na sajtu, mejlom ili telefonom. Kažeš kad ti treba vozilo, na koliko dana i za šta - grad, put, poslovna vožnja.</p>
-        <p>Proverimo koje vozilo iz voznog parka je slobodno za taj termin i javimo ti tačnu cenu za tvoj slučaj.</p>
-      </div>
-      <div class="offer-box">
-        <p>Cena zavisi od modela i dužine najma, zato je ne guramo u jednu cifru na ovoj stranici. Pogledaš je na stranici Automobili i cene, ili ti je pošaljemo direktno kad nam kažeš šta ti treba.</p>
-        <a href="#" class="btn btn-secondary">Pogledaj vozila i cene</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="strip">
-    <img src="assets/aster-home-page_24.png" alt="">
+    <div class="placeholder-img" role="img" aria-label="Fotografija vozila iz voznog parka">FOTOGRAFIJA VOZILA</div>
   </div>
+</section>
 
-  <section class="section section-offwhite" id="kontakt">
-    <div class="wrap">
-      <div class="eyebrow">Poziv na akciju</div>
-      <h2>Pošalji upit sada</h2>
-      <p style="margin-bottom: 32px;">Popuni formu ispod. Javljamo se sa predlogom vozila i cenom za tvoj termin, obično isti dan.</p>
-      <div class="contact-grid">
-        <div class="contact-form-wrap">
-          <form action="#" method="post">
-            <div>
-              <label for="ime">Ime i prezime</label>
-              <input type="text" id="ime" name="ime" placeholder="Tvoje ime">
-            </div>
-            <div>
-              <label for="kontakt-podatak">Telefon ili email</label>
-              <input type="text" id="kontakt-podatak" name="kontakt-podatak" placeholder="Kako da ti se javimo">
-            </div>
-            <div>
-              <label for="datum">Kada ti treba vozilo</label>
-              <input type="text" id="datum" name="datum" placeholder="Npr. od 14. do 18. maja">
-            </div>
-            <div>
-              <label for="poruka">Šta ti treba</label>
-              <textarea id="poruka" name="poruka" placeholder="Vrsta vozila, u kom gradu preuzimaš, na koliko dana"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Pošalji upit</button>
-          </form>
-        </div>
-        <div class="contact-info-wrap">
-          <div class="contact-info-item">
-            <img src="assets/email.png" alt="Ikonica koverte za mejl">
-            <p><strong>Upit mejlom</strong>Ako ti više odgovara mejl umesto forme, javi se preko iste dugmadi na sajtu, prosledimo ti adresu za direktan kontakt.</p>
-          </div>
-          <div class="contact-info-item">
-            <img src="assets/info.png" alt="Ikonica informacije">
-            <p><strong>Sedište firme</strong>Asterix - Rent a Car d.o.o., Jagodina, Srbija.</p>
-          </div>
-        </div>
+<div class="band">
+  <div class="wrap">
+    <p>Vozila za posao, putovanje i svaki dan - u Jagodini i okolini</p>
+  </div>
+</div>
+
+<section id="problem">
+  <div class="wrap two-col">
+    <div class="text-col">
+      <div class="eyebrow">Situacija koju znaš</div>
+      <h2>Auto ti zatreba baš kad ga nemaš</h2>
+      <p>Klijent zove iz Beograda i sutra ti treba prevoz sa sastanka na sastanak.</p>
+      <p>Tvoj auto je kod majstora, a porodica planira put za vikend.</p>
+      <p>Otvoriš internet, kucaš "rent a car Jagodina", zoveš tri broja i dva se ne jave.</p>
+      <p>Treći ti pošalje cenu bez detalja, a kad pitaš za depozit i kilometražu, ćuti.</p>
+      <p>Umesto da rešiš problem za pet minuta, gubiš pola dana zovući nepoznate brojeve.</p>
+    </div>
+    <div class="placeholder-img" role="img" aria-label="Fotografija osobe koja zove telefonom u potrazi za vozilom">FOTOGRAFIJA SITUACIJE</div>
+  </div>
+</section>
+
+<section id="resenje">
+  <div class="wrap two-col">
+    <div class="placeholder-img" role="img" aria-label="Fotografija vozila u dvorištu poslovnice Asterix Rent a Car">FOTOGRAFIJA POSLOVNICE</div>
+    <div class="text-col">
+      <div class="eyebrow">Rešenje</div>
+      <h2>Jedan poziv, jedan dogovor, jedno vozilo</h2>
+      <p>Asterix Rent a Car radi tačno to - iznajmljuje vozila ljudima u Jagodini i okolini, bez okolišanja.</p>
+      <p>Javiš nam se, kažeš kada ti treba auto i na koliko dugo, mi ti kažemo šta imamo slobodno i koliko to košta.</p>
+      <p>Ne moraš da pogađaš uslove niti da tražiš sitna slova - sve objasnimo pre nego što potpišeš bilo šta.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kredibilitet">
+  <div class="wrap">
+    <div class="eyebrow">Ko stoji iza ovoga</div>
+    <h2>Ko stoji iza Asterix Rent a Car</h2>
+    <p style="color:var(--gray);font-size:17px;">Pre nego što nam poveriš rezervaciju, evo šta treba da znaš o firmi.</p>
+
+    <div class="cred-list">
+      <div class="cred-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+        <p>Asterix - Rent a car d.o.o. je registrovana firma sa matičnim brojem i PIB-om, upisana u Agenciji za privredne registre.</p>
+      </div>
+      <div class="cred-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <p>Poslovnica se nalazi u Jagodini, na fizičkoj adresi koju možeš da posetiš pre nego što bilo šta potpišeš.</p>
+      </div>
+      <div class="cred-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <p>Radimo ovaj posao u Jagodini dugi niz godina, a vozila su nam ovde, ne u nekom drugom gradu odakle bi čekao dostavu.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section no-border" id="upozorenje">
-    <div class="wrap">
-      <div class="warning-box">
-        <div class="eyebrow">Pre nego što zatvoriš stranicu</div>
-        <h2>Ako ovo ostaviš za sutra</h2>
-        <p>Za šest meseci ćeš verovatno biti u istoj situaciji. Auto na servisu, gost na aerodromu, put koji treba organizovati u poslednjem trenutku. Razlika je samo u tome da li već imaš kontakt firme koja ti javlja slobodno vozilo za kratko vreme, ili ćeš tog dana ponovo zvati firme redom i čekati odgovor.</p>
+<section id="benefiti">
+  <div class="wrap">
+    <div class="eyebrow">Šta dobijaš</div>
+    <h2>Šta dobijaš kad iznajmiš auto kod nas</h2>
+  </div>
+  <div class="wrap">
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M3 13l2-6h14l2 6"/><rect x="3" y="13" width="18" height="6" rx="1"/><circle cx="7" cy="19" r="1"/><circle cx="17" cy="19" r="1"/></svg>
+        <p>Vozilo preuzimaš u Jagodini, bez čekanja na dostavu iz drugog grada</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M6 3h9l5 5v13H6z"/><path d="M9 12h6M9 16h6"/></svg>
+        <p>Uslove ugovora ti objasnimo pre potpisivanja, ne posle</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        <p>Biraš period iznajmljivanja - jedan dan, nedelju ili mesec</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><circle cx="18" cy="8" r="2"/></svg>
+        <p>Ne zavisiš od rodbine, prijatelja ili taksija za duže relacije</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M3 12l7-9 7 9-7 9z"/></svg>
+        <p>Imaš vozilo za sastanak, putovanje ili svakodnevne obaveze kad ti auto otkaže</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg>
+        <p>Pričaš sa ljudima koji znaju Jagodinu i okolinu, ne sa pozivnim centrom u drugom gradu</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="wrap">
-      <div class="footer-cols">
-        <div class="footer-col footer-logo">
-          <img src="assets/logo.png" alt="Asterix Rent a Car logo">
-          <p>Asterix - Rent a Car d.o.o.<br>Iznajmljivanje vozila u Jagodini i okolini.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Stranica</h4>
-          <a href="#">Početna</a>
-          <a href="#ponuda">Automobili i cene</a>
-          <a href="#kredibilitet">O nama</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
-        <div class="footer-col">
-          <h4>Kontakt</h4>
-          <p>Jagodina, Srbija</p>
-          <p>Matični broj i PIB dostupni na zahtev.</p>
-        </div>
-      </div>
-      <p class="ps-line">P.S. Cene vozila su na stranici Automobili i cene, upit šalješ bez obaveze. Pošalji poruku sada i javljamo ti se sa slobodnim vozilom za tvoj termin.</p>
-      <p class="copyright">© 2024 Asterix - Rent a Car d.o.o. Sva prava zadržana.</p>
+<section id="ponuda">
+  <div class="wrap">
+    <div class="eyebrow">Kako to izgleda</div>
+    <h2>Kako izgleda iznajmljivanje kod nas</h2>
+
+    <div class="offer-box">
+      <ul class="offer-steps">
+        <li>Javiš nam se i kažeš koji auto ti treba, na koliko dana i gde ti je polazna tačka.</li>
+        <li>Pošaljemo ti dostupna vozila i cenu za tvoj period - cene zavise od modela i dužine iznajmljivanja i nalaze se na stranici Vozila i cene.</li>
+        <li>Dogovorimo preuzimanje, potpišeš ugovor, dobiješ ključeve.</li>
+        <li>Vraćaš auto kad se dogovorimo, bez iznenađenja u obračunu.</li>
+      </ul>
+      <a href="#" class="btn">Pogledaj vozila i cene</a>
     </div>
-  </footer>
+  </div>
+</section>
+
+<div class="band band-alt">
+  <div class="wrap">
+    <p>Jednostavan dogovor. Pouzdano vozilo. Bez čekanja.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Ako odložiš</div>
+    <h2>Šta ostaje isto ako odložiš</h2>
+    <div class="warning-box">
+      <p>Za šest meseci, kad ti sledeći put zatreba auto, opet ćeš kucati "rent a car Jagodina" u pretragu, zvati nepoznate brojeve i nadati se da će se neko javiti.</p>
+      <p>Ili sad znaš gde da se javiš i imaš odgovor za par minuta.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Poslednji korak</div>
+      <h2>Rezerviši auto</h2>
+      <p style="color:var(--gray);font-size:17px;margin-bottom:28px;">Javi nam se i reci kad ti treba vozilo. Odgovorimo ti sa dostupnim autom i cenom.</p>
+
+      <div class="contact-info-item">
+        <img src="assets/email.png" alt="Ikonica email poruke">
+        <a href="#"><span>Pošalji nam email</span></a>
+      </div>
+      <div class="contact-info-item">
+        <img src="assets/info.png" alt="Ikonica informacija o firmi">
+        <a href="#"><span>Informacije o firmi i poslovnici</span></a>
+      </div>
+    </div>
+
+    <form class="contact-form" action="#" method="post">
+      <input type="text" name="ime" placeholder="Ime i prezime" required>
+      <input type="tel" name="telefon" placeholder="Broj telefona" required>
+      <input type="email" name="email" placeholder="Email adresa">
+      <textarea name="poruka" placeholder="Kada ti treba vozilo i na koliko dugo?"></textarea>
+      <button type="submit" class="btn">Pošalji upit</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="logo-footer">
+        <img src="assets/logo.png" alt="Asterix Rent a Car logo, bela verzija">
+        <p>Asterix - Rent a Car d.o.o., Jagodina. Matični broj i PIB dostupni na uvid u poslovnici i u ugovoru o iznajmljivanju.</p>
+      </div>
+      <div>
+        <h3>Stranica</h3>
+        <ul class="footer-links">
+          <li><a href="#">Početna</a></li>
+          <li><a href="#kredibilitet">O nama</a></li>
+          <li><a href="#">Vozila i cene</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="footer-links">
+          <li><a href="#">Pošalji email</a></li>
+          <li><a href="#">Adresa poslovnice</a></li>
+          <li><a href="#kontakt">Rezerviši auto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer-ps">P.S. Auto koji ti treba za posao ili putovanje čeka te u Jagodini - javi nam se i dogovorimo termin. Popuni formu gore ili nas kontaktiraj preko emaila, rezervacija traje par minuta.</p>
+  </div>
+</footer>
 
 </body>
 </html>
