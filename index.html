@@ -286,6 +286,101 @@
     max-width:none;
   }
 
+  /* ---------- VOZILA ---------- */
+  .section-intro{
+    color:var(--gray);
+    font-size:17px;
+    margin-bottom:36px;
+  }
+
+  .car-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+
+  .car-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .car-card .placeholder-img{
+    min-height:180px;
+    border:none;
+    border-radius:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .car-body{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+  }
+
+  .car-cat{
+    color:var(--accent);
+    font-weight:700;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+
+  .car-card h3{
+    font-size:21px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+
+  .car-card p{
+    color:var(--gray);
+    font-size:15px;
+    margin-bottom:18px;
+  }
+
+  .car-specs{
+    list-style:none;
+    margin-bottom:20px;
+  }
+
+  .car-specs li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--gray);
+    font-size:14px;
+    padding-top:8px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .car-specs li:last-child{border-bottom:none;}
+
+  .car-specs svg{flex-shrink:0;}
+
+  .car-price{
+    margin-top:auto;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+
+  .car-price strong{
+    font-family:'Archivo', Arial, sans-serif;
+    font-size:24px;
+    font-weight:800;
+    display:block;
+  }
+
+  .car-price span{
+    color:var(--gray);
+    font-size:14px;
+  }
+
   /* ---------- OFFER ---------- */
   .offer-box{
     border:1px solid var(--line);
@@ -480,6 +575,8 @@
 
     .benefit-grid{grid-template-columns:1fr 1fr;}
 
+    .car-grid{grid-template-columns:1fr 1fr;}
+
     .footer-grid{grid-template-columns:1fr;gap:32px;}
   }
 
@@ -492,7 +589,15 @@
 
     .benefit-grid{grid-template-columns:1fr;}
 
+    .car-grid{grid-template-columns:1fr;}
+
     .offer-box{padding:24px;}
+
+    .offer-box .offer-steps{margin-top:0;margin-bottom:24px;}
+
+    .offer-steps li:first-child{padding-top:0;}
+
+    .offer-steps li:last-child{padding-bottom:0;}
 
     h2{max-width:100%;}
   }
@@ -512,7 +617,7 @@
     <nav class="nav-links">
       <a href="#">Početna</a>
       <a href="#resenje">O nama</a>
-      <a href="#">Vozila i cene</a>
+      <a href="#vozila">Vozila i cene</a>
       <a href="#kontakt">Kontakt</a>
       <a href="#kontakt" class="btn">Rezerviši auto</a>
     </nav>
@@ -601,6 +706,88 @@
   </div>
 </section>
 
+<section id="vozila">
+  <div class="wrap">
+    <div class="eyebrow">Vozila</div>
+    <h2>Vozila iz našeg voznog parka</h2>
+    <p class="section-intro">Sva vozila su registrovana, servisirana i spremna za preuzimanje u Jagodini. Cene su za jedan dan iznajmljivanja - za duži period cena po danu je niža.</p>
+
+    <div class="car-grid">
+      <div class="car-card">
+        <div class="placeholder-img" role="img" aria-label="Fotografija vozila Škoda Fabia">FOTOGRAFIJA - ŠKODA FABIA</div>
+        <div class="car-body">
+          <div class="car-cat">Ekonomična klasa</div>
+          <h3>Škoda Fabia</h3>
+          <p>Mali gradski auto za svakodnevne obaveze i kraće relacije. Lak za parkiranje i najisplativiji po pređenom kilometru.</p>
+          <ul class="car-specs">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/></svg>5 sedišta</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="12" cy="4.5" r="2"/><path d="M12 6.5V20M5 11h14M5 11v4M19 11v4"/></svg>Manuelni menjač</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M4 20V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14"/><path d="M3 20h12M14 10h3v7a2 2 0 0 0 3 0V8l-3-3"/></svg>Benzin</li>
+          </ul>
+          <div class="car-price">
+            <strong>od 25 € / dan</strong>
+            <span>uz dogovoren depozit i kilometražu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="placeholder-img" role="img" aria-label="Fotografija vozila Volkswagen Golf">FOTOGRAFIJA - VW GOLF</div>
+        <div class="car-body">
+          <div class="car-cat">Kompakt klasa</div>
+          <h3>Volkswagen Golf</h3>
+          <p>Univerzalno vozilo za grad i autoput. Dovoljno prostora za četiri putnika i prtljag za vikend putovanje.</p>
+          <ul class="car-specs">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/></svg>5 sedišta</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="12" cy="4.5" r="2"/><path d="M12 6.5V20M5 11h14M5 11v4M19 11v4"/></svg>Manuelni menjač</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M4 20V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14"/><path d="M3 20h12M14 10h3v7a2 2 0 0 0 3 0V8l-3-3"/></svg>Dizel</li>
+          </ul>
+          <div class="car-price">
+            <strong>od 30 € / dan</strong>
+            <span>uz dogovoren depozit i kilometražu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="placeholder-img" role="img" aria-label="Fotografija vozila Škoda Octavia">FOTOGRAFIJA - ŠKODA OCTAVIA</div>
+        <div class="car-body">
+          <div class="car-cat">Poslovna klasa</div>
+          <h3>Škoda Octavia</h3>
+          <p>Limuzina za poslovne puteve i vožnju klijenata. Veliki gepek, udobna na dužim relacijama i uredna za sastanke.</p>
+          <ul class="car-specs">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/></svg>5 sedišta</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="12" cy="4.5" r="2"/><path d="M12 6.5V20M5 11h14M5 11v4M19 11v4"/></svg>Automatik</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M4 20V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14"/><path d="M3 20h12M14 10h3v7a2 2 0 0 0 3 0V8l-3-3"/></svg>Dizel</li>
+          </ul>
+          <div class="car-price">
+            <strong>od 35 € / dan</strong>
+            <span>uz dogovoren depozit i kilometražu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="placeholder-img" role="img" aria-label="Fotografija vozila Dacia Duster">FOTOGRAFIJA - DACIA DUSTER</div>
+        <div class="car-body">
+          <div class="car-cat">SUV klasa</div>
+          <h3>Dacia Duster</h3>
+          <p>Viši SUV za lošije puteve, zimske uslove i porodična putovanja. Najviše prostora za prtljag u ponudi.</p>
+          <ul class="car-specs">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/></svg>5 sedišta</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><circle cx="12" cy="4.5" r="2"/><path d="M12 6.5V20M5 11h14M5 11v4M19 11v4"/></svg>Manuelni menjač</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8590C" stroke-width="2"><path d="M4 20V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14"/><path d="M3 20h12M14 10h3v7a2 2 0 0 0 3 0V8l-3-3"/></svg>Benzin</li>
+          </ul>
+          <div class="car-price">
+            <strong>od 40 € / dan</strong>
+            <span>uz dogovoren depozit i kilometražu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="ponuda">
   <div class="wrap">
     <div class="eyebrow">Kako to izgleda</div>
@@ -613,7 +800,7 @@
         <li>Dogovorimo preuzimanje, potpišeš ugovor, dobiješ ključeve.</li>
         <li>Vraćaš auto kad se dogovorimo, bez iznenađenja u obračunu.</li>
       </ul>
-      <a href="#" class="btn">Pogledaj vozila i cene</a>
+      <a href="#vozila" class="btn">Pogledaj vozila i cene</a>
     </div>
   </div>
 </section>
@@ -674,7 +861,7 @@
         <ul class="footer-links">
           <li><a href="#">Početna</a></li>
           <li><a href="#resenje">O nama</a></li>
-          <li><a href="#">Vozila i cene</a></li>
+          <li><a href="#vozila">Vozila i cene</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </div>
